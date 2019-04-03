@@ -1,13 +1,11 @@
-const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  context: __dirname,
-  entry: {
-    index: path.join(__dirname, 'src/index.js'),
-  },
+  mode: 'development',
+  entry: './src/client/index.js',
   output: {
     path: `${__dirname}`,
-    filename: 'lib/js/[name].js',
+    filename: './public/js/bundle.js',
   },
   module: {
     rules: [
@@ -17,7 +15,7 @@ module.exports = {
         exclude: [/node_modules/],
         query: {
           presets: [
-            ['@babel/preset-env', { useBuiltIns: 'entry' }],
+            '@babel/preset-env',
           ],
           plugins: [
             ['@babel/plugin-proposal-class-properties', { loose: false }],
@@ -29,8 +27,20 @@ module.exports = {
       },
     ],
   },
+  devServer: {
+    host: '0.0.0.0',
+    port: 3000,
+    proxy: {
+      '/api/**': 'http://localhost:8080',
+      changeOrigin: true,
+    },
+  },
   resolve: {
     extensions: ['.js'],
   },
-  mode: 'production',
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+    }),
+  ],
 };
