@@ -22,6 +22,7 @@ module.exports = {
             ['@babel/plugin-proposal-object-rest-spread', { useBuiltIns: true }],
             ['@babel/plugin-transform-classes', { loose: true }],
             ['@babel/plugin-transform-proto-to-assign'],
+            ['@babel/plugin-transform-runtime'],
           ],
         },
       },

@@ -116,20 +116,10 @@ input, button {
         <span id="title" class="navbar_title" aria-label="Title">Pilot Project</span>
         <div class="title_bar_right_container">
           <button id="open_file" type="button" class="button title_bar_button" aria-label="Select File" onClick="selectFile()">Select file...</button>
-          <input id="import" type="file" accept=".epub" onChange="openEpub()" />
+          <input id="import" type="file" accept=".epub" onChange="selectedFile()" />
         </div>
       </div>
       <div id="content"></div>
     </div>
-    <script>
-      function selectFile(e) {
-        document.getElementById('open_file').blur();
-        document.getElementById('import').click();
-      }
-      function openEpub() {
-        const path = document.getElementById('import').value;
-        fetchBook(path);
-      }
-    </script>
   </body>
 </html>
