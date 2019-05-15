@@ -19,7 +19,7 @@
     "dev": "concurrently \"yarn server\" \"yarn client\""
   },
   "dependencies": {
-    "@ridi/epub-parser": "^0.5.3",
+    "@ridi/epub-parser": "^0.5.5",
     "@ridi/eslint-config": "^4.1.1",
     "@babel/core": "^7.4.0",
     "@babel/cli": "^7.2.3",

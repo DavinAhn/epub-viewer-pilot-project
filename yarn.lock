@@ -686,12 +686,12 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@ridi/epub-parser@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@ridi/epub-parser/-/epub-parser-0.5.3.tgz#da7421745a5c515767678fcd10c29a6771f89c2b"
-  integrity sha512-+cSmT94LqvF4PFsPHpnTygg/YJ/l4GSXYYaf0xNWE/XTCnqtpP8JEK0j/XhMi1d01/5R9GHOseVGZL+OLgpQtg==
+"@ridi/epub-parser@^0.5.5":
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/@ridi/epub-parser/-/epub-parser-0.5.5.tgz#0ab7c823086d977ec18ba4846eeb834990e0b41a"
+  integrity sha512-7upBgXBRdgMWoab5+5SnpbZLHZyuTtUXUYirxtx6x5cknuid3G5R9tEgBTsObav2JXeXzwDtuLTKg/1/BMNW+w==
   dependencies:
-    "@ridi/parser-core" "^0.5.3"
+    "@ridi/parser-core" "^0.5.5"
     css-tree "^1.0.0-alpha.29"
     fast-xml-parser "^3.11.2"
     fs-extra "^7.0.1"
@@ -708,10 +708,10 @@
     eslint-plugin-jsx-a11y "^6.1.1"
     eslint-plugin-react "^7.11.0"
 
-"@ridi/parser-core@^0.5.3":
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/@ridi/parser-core/-/parser-core-0.5.3.tgz#2e34bb59dbfa6f96b8698c5d8e2b09c85e6809f1"
-  integrity sha512-7l75x1TDNCXGmTOtlmo1xb0+KOTxLS4dJbOIbSx0YPzlWNm65scFZQ2Y2Kmok6pL5vGZvS5iWHlWPmxsxRah0A==
+"@ridi/parser-core@^0.5.5":
+  version "0.5.5"
+  resolved "https://registry.yarnpkg.com/@ridi/parser-core/-/parser-core-0.5.5.tgz#cfd23bd710aeeac36b579151f861b0030cbd94d1"
+  integrity sha512-jVtgisRH2Adp79nQN9z6op+bqNHyyPrHDOdf9XlBLD/PDr24uhEiCgVbodU5C/5mqy+AVCVyMq+izTK4RJ8Ojg==
   dependencies:
     aes-js "^3.1.1"
     event-stream "3.3.4"

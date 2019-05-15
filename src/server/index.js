@@ -16,7 +16,7 @@ const fetchBook = (fileName) => {
       const unzipPath = path.join(dataPath, path.basename(filePath, path.extname(filePath)));
       const parser = new EpubParser(filePath);
       parser.parse({ unzipPath }).then((book) => {
-        const basePath = filePath;
+        const basePath = unzipPath;
         const extractBody = (innerHTML, attrs) => {
           const string = attrs.map((attr) => {
             return ` ${attr.key}="${attr.value}"`;
