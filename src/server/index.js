@@ -25,7 +25,13 @@ const fetchBook = (fileName) => {
         };
         parser.readItems(book.spines.concat(book.styles), { basePath, extractBody }).then((results) => {
           const position = book.spines.length;
-          resolve({ book, spines: results.slice(0, position), styles: results.slice(position) });
+          resolve({
+            unzipPath,
+            book,
+            spines: results.slice(0, position),
+            styles: results.slice(position),
+            fonts: book.fonts,
+          });
         });
       });
     } else {

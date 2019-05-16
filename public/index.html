@@ -48,12 +48,13 @@ input, button {
 /* Navigation Bar */
 
 .navbar {
-  position: relative;
+  position: fixed;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: .5rem 1rem;
+  padding: .5rem 0;
   background: #343a40;
   border-bottom: 1px solid #808991;
 }
@@ -63,6 +64,7 @@ input, button {
   display: inline-block;
   padding-top: .3125rem;
   padding-bottom: .3125rem;
+  padding-left: 1rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -90,6 +92,7 @@ input, button {
 .title_bar_right_container {
   float: right;
   line-height: 0;
+  padding-right: 1rem;
 }
 
 .title_bar_button {
@@ -105,6 +108,16 @@ input, button {
   opacity: .95;
 }
 
+#scroll_mode_setting {
+  padding-bottom: .15;
+}
+
+.scroll_mode_setting_label {
+  color: #e6e8eb;
+  line-height: 0;
+  opacity: .7;
+}
+
 #import {
   display: none;
 }
@@ -115,6 +128,8 @@ input, button {
       <div id="title_bar" class="navbar">
         <span id="title" class="navbar_title" aria-label="Title">Pilot Project</span>
         <div class="title_bar_right_container">
+          <input id="scroll_mode_setting" type="checkbox" onChange="onScrollModeSettingChange()" />
+          <span class="scroll_mode_setting_label">Scroll Mode</span>
           <button id="open_file" type="button" class="button title_bar_button" aria-label="Select File" onClick="selectFile()">Select file...</button>
           <input id="import" type="file" accept=".epub" onChange="selectedFile()" />
         </div>
