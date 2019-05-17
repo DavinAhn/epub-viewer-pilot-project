@@ -54,7 +54,9 @@ function prepareFonts(fonts, unzipPath, completion) {
     });
 
     const dummyStyle = document.createElement('style');
-    dummyStyle.innerHTML = fontSet.map(font => font.style).join(' ') + fontSet.map(font => `.${font.name} { font-family: ${font.name} }`).join(' ');
+    const fontfaceStyle = fontSet.map(font => font.style).join(' ');
+    const paragraphStyle = fontSet.map(font => `.${font.name} { font-family: ${font.name} }`).join(' ');
+    dummyStyle.innerHTML = fontfaceStyle + paragraphStyle;
     document.head.appendChild(dummyStyle);
 
     const dummyContent = document.createElement('div');
@@ -154,12 +156,8 @@ function loadBook(result) {
             if (image.complete) {
               tap();
             } else {
-              image.addEventListener('load', () => {
-                tap();
-              });
-              image.addEventListener('error', () => {
-                tap();
-              });
+              image.addEventListener('load', tap);
+              image.addEventListener('error', tap);
             }
           });
         }), `${imageCount} images loaded`);
@@ -175,9 +173,8 @@ function fetchBook(file) {
     if (error.response.status === 404) {
       const formData = new FormData();
       formData.append('file', file);
-      axios.post('api/book/upload', formData).then((response) => {
-        loadBook(response.data);
-      });
+      axios.post('api/book/upload', formData)
+        .then(response => loadBook(response.data));
     } else {
       console.log(error);
     }
@@ -198,7 +195,7 @@ function onScrollModeSettingChange() {
         setTimeout(startPaging, 0); // 특별한 의미가 있는 timeout은 아니고, 로그 순서를 맞추기 위함
       }, 0);
     }), `Mode Setting Changed (scrollMode: ${old} -> ${!old})`);
-  }, 100);
+  }, 100); // Checkbox 갱신을 기다림
 }
 
 //
